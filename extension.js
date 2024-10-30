@@ -98,7 +98,7 @@ class ConservationIndicator extends QuickSettings.SystemIndicator {
 
     _setConservationMode(enabled) {
         const new_status = (enabled) ? '1' : '0';
-        Util.spawnCommandLine(`/bin/sh -c 'echo ${new_status} | sudo tee ${sys_conservation} >/dev/null'`);
+        Util.spawnCommandLine(`/bin/sh -c 'echo ${new_status} | doas tee ${sys_conservation} >/dev/null'`);
     }
 });
 
